@@ -1,0 +1,40 @@
+/* reset */
+page {
+  font-size: 32rpx;
+  line-height: 1.6;
+  background-color: #f8f8f8;
+  height: 100%;
+  font-family: -apple-system-font, Helvetica Neue, sans-serif;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+checkbox,
+radio {
+  margin-right: 10rpx;
+}
+button {
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+form {
+  width: 100%;
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.container {
+  position: relative;
+  height: 100%;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; */
+  box-sizing: border-box;
+  background-color: #ededed;
+  background: linear-gradient(to bottom, #7aa3d7, #3c506f);
+}

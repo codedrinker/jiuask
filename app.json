@@ -1,0 +1,12 @@
+{
+  "pages": [
+    "pages/question/index"
+  ],
+  "window": {
+    "navigationBarTitleText": "久问问答",
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#405f80",
+    "navigationBarTextStyle": "white"
+  }
+}
