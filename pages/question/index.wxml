@@ -10,7 +10,7 @@
     </view>
   </view>
   <!-- 登录按钮 -->
-  <button class="btn" open-type="getUserInfo"  bindgetuserinfo="bindgetuserinfo" wx:if="{{!ishaveUserinfo}}" hover-class="btn-click">
+  <button class="btn" open-type="getUserInfo"  bindgetuserinfo="getUserInfo" hover-class="btn-click">
     登录
   </button>
 
