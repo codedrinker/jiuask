@@ -1,0 +1,7 @@
+.post {
+  width: 80rpx;
+  height: 80rpx;
+  position: absolute;
+  right: 60rpx;
+  bottom: 30px;
+}

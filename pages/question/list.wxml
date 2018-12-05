@@ -1,0 +1,1 @@
+<image src='/images/post-selected.png' class='post' bindtap='post'></image>

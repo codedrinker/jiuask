@@ -1,0 +1,20 @@
+@import "../../lib/weui.wxss";
+.page-section {
+  margin: 40rpx 0;
+}
+textarea {
+  width: 700rpx;
+  min-height: 300rpx;
+  padding: 25rpx 0;
+}
+
+.textarea-wrp {
+  padding: 0 25rpx;
+  background-color: #fff;
+}
+
+.weui-btn {
+  background-color: #3c506f;
+  color: white;
+  margin: 50rpx 30rpx;
+}

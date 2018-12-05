@@ -1,12 +1,50 @@
 {
   "pages": [
-    "pages/question/index"
+    "pages/index",
+    "pages/question/post",
+    "pages/question/list",
+    "pages/notification/list",
+    "pages/profile/index",
+    "pages/gift/list"
   ],
   "window": {
-    "navigationBarTitleText": "久问问答",
+    "navigationBarTitleText": "久问",
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#405f80",
     "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "selectedColor": "#3c506f",
+    "list": [
+      {
+        "navigationBarTitleText": "首页",
+        "pagePath": "pages/question/list",
+        "text": "首页",
+        "iconPath": "images/index-default.png",
+        "selectedIconPath": "images/index-selected.png"
+      },
+      {
+        "navigationBarTitleText": "通知",
+        "pagePath": "pages/notification/list",
+        "text": "通知",
+        "iconPath": "images/notification-default.png",
+        "selectedIconPath": "images/notification-selected.png"
+      },
+      {
+        "navigationBarTitleText": "礼品",
+        "pagePath": "pages/gift/list",
+        "text": "礼品",
+        "iconPath": "images/gift-default.png",
+        "selectedIconPath": "images/gift-selected.png"
+      },
+      {
+        "navigationBarTitleText": "我",
+        "pagePath": "pages/profile/index",
+        "text": "我",
+        "iconPath": "images/me-default.png",
+        "selectedIconPath": "images/me-selected.png"
+      }
+    ]
   }
 }

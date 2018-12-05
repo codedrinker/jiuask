@@ -1,7 +1,8 @@
 //index.js
 //获取应用实例
-import config from "../../config";
 const app = getApp();
+import service from "../service/service";
+import { Login } from "../service/api";
 Page({
   // 保存当前页面的数据，用于存储和传递数据到 view 层
   data: {},
@@ -16,6 +17,10 @@ Page({
         icon: "success",
         duration: 2000
       });
+
+      wx.switchTab({
+        url: "question/list"
+      });
       return;
     }
 
@@ -26,19 +31,18 @@ Page({
     });
     console.log(userInfo)
     // 调用服务端 API
-    wx.request({
-      url: config.serverHost + '/api/login',
-      method: "post",
-      data: JSON.stringify({
+    service({
+      ...Login,
+      data: {
         code: app.globalData.code,
         rawData: userInfo.detail.rawData,
         signature: userInfo.detail.signature
-      }),
-      dataType: "json",
-      success: response => {
+      }
+    })
+    .then(response => {
         wx.hideLoading();
         console.log(response);
-        if (response.data.status == 200) {
+        if (response.status == 200) {
           // 展示 登录成功 提示框
           wx.showToast({
             title: '登录成功',
@@ -48,28 +52,33 @@ Page({
           // 把自定义登录状态 token 缓存到小程序端
           wx.setStorage({
             key: "token",
-            data: response.data.data.token,
+            data: response.data.token,
             success: data => {
-              app.globalData.token = response.data.data.token;
+              app.globalData.token = response.data.token;
             }
+          });
+          wx.switchTab({
+            url: "question/list"
           });
         } else {
           // 登录如果服务端产生异常如果重新获取 code，因为code 只能使用一次
           app.login();
           // 展示 错误信息
           wx.showToast({
-            title: response.data.message,
+            title: response.message,
             icon: "none",
             duration: 1000
           });
         }
-      },
-      fail: response => {
-        console.log(response)
+      }
+    )
+      .catch(error => {
+        console.log(error);
+        // 登录如果服务端产生异常如果重新获取 code，因为code 只能使用一次
+        app.login();
         wx.showToast({
           title: '登录失败，请重试'
         });
-      }
     });
   }
 });
