@@ -45,6 +45,11 @@ const service = options => {
             message: "请求超时，请重试"
           };
           reject(error);
+        } else if (error.errMsg == 'request:fail ') {
+          error = {
+            message: "请求超时，请重试"
+          };
+          reject(error);
         } else {
           reject(error);
         }

@@ -10,9 +10,8 @@ Page({
     size: 10,
     page: 0
   },
-
   // 加载页面的时候获取列表数据
-  onLoad: function () {
+  onLoad: function() {
     this.list();
   },
   post: function() {
