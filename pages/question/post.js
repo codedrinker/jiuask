@@ -32,7 +32,7 @@ Page({
       title: '提交中'
     });
     service({
-      ...Question,
+        ...Question,
         data: {
           title: e.detail.value.title,
           content: e.detail.value.content

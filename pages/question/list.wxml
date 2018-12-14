@@ -1,1 +1,29 @@
-<image src='/images/post-selected.png' class='post' bindtap='post'></image>
+<view class='main'>
+  <image class='post' src='/images/post-selected.png' bindtap='post'></image>
+  <scroll-view scroll-y class="list" bindscrolltolower="onReachBottom">
+    <view wx:for="{{list}}" wx:key="{{id}}" wx:for-index="idx" wx:for-item="item" bindtap="clickQuestion" class="item" data-id="{{ item.id }}">
+      <view class="item-ask">
+        <image src='/images/ask.png' class='icon'></image>
+        <text class='ask'>{{item.title}}</text>
+      </view>
+      <view class="item-answer">
+        <image src='/images/answer.png' class='icon'></image>
+        <text class='answer'>{{item.answer || "暂无回答"}}</text>
+      </view>
+      <view class='menu'>
+        <view class='menu-item'>
+          <image src='/images/comment.png'></image>
+          <text>{{item.commentCount || 0}}</text>
+        </view>
+        <view class='menu-item'>
+          <image src='/images/like.png'></image>
+          <text>{{item.likeCount || 0}}</text>
+        </view>
+        <view class='menu-item'>
+          <image src='/images/view.png'></image>
+          <text>{{item.viewCount || 0}}</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

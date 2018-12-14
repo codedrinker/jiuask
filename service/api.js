@@ -13,4 +13,15 @@ const Question = {
   url: config.serverHost + "/api/question",
   method: "post"
 };
-export { Login, Question};
+
+// 获取问题列表
+const ListQuestion = {
+  url: config.serverHost + "/api/question/list",
+  method: "get"
+};
+
+export {
+  Login,
+  Question,
+  ListQuestion
+};

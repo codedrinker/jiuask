@@ -1,4 +1,5 @@
 {
-  "disableScroll": true,
+  "disableScroll": false,
+  "enablePullDownRefresh": true,
   "navigationBarTitleText": "久问"
 }
