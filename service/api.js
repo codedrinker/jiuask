@@ -20,8 +20,28 @@ const ListQuestion = {
   method: "get"
 };
 
+// 获取问题信息
+const QuestionInfo = {
+  url: config.serverHost + "/api/question/get",
+  method: "get"
+};
+
+
+const ListComment = {
+  url: config.serverHost + "/api/comment/list",
+  method: "get"
+};
+
+const CreateComment = {
+  url: config.serverHost + "/api/comment",
+  method: "post"
+};
+
 export {
   Login,
   Question,
-  ListQuestion
+  ListQuestion,
+  QuestionInfo,
+  CreateComment,
+  ListComment
 };

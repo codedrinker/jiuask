@@ -16,11 +16,6 @@ App({
           this.globalData.code = codeInfo.code;
         }
       });
-    } else {
-      // 如果已经登录了，直接跳转到主页
-      wx.switchTab({
-        url: 'pages/question/list',
-      });
     }
   },
   reLogin: function() {

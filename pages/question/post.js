@@ -12,8 +12,7 @@ Page({
   },
   onLoad: function() {},
   post: function(e) {
-    console.log("submit")
-    console.log(e.detail.value)
+    console.log("submit", e.detail.value);
     if (!e.detail.value.title) {
       wx.showToast({
         title: '请输入标题',
@@ -35,7 +34,8 @@ Page({
         ...Question,
         data: {
           title: e.detail.value.title,
-          content: e.detail.value.content
+          content: e.detail.value.content,
+          formId: e.detail.formId
         }
       })
       .then(response => {

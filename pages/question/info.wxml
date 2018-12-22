@@ -1,0 +1,43 @@
+<view class='main'>
+  <view class='question'>
+    <view class='title'>{{question.title}}</view>
+    <view class='date'>{{question.gmtCreate}}</view>
+    <view class='content'>{{question.content}}</view>
+    <view class='reactions'>
+      <view class='reaction-item'>
+        <image src='/images/comment.png'></image>
+        <text>{{question.commentCount || 0}}</text>
+      </view>
+      <view class='reaction-item'>
+        <image src='/images/like.png'></image>
+        <text>{{question.likeCount || 0}}</text>
+      </view>
+      <view class='reaction-item'>
+        <image src='/images/view.png'></image>
+        <text>{{question.viewCount || 0}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='sep'></view>
+  <scroll-view scroll-y class='comments' bindscrolltolower="onReachBottom">
+    <view class='comment' wx:for="{{comments}}" wx:key="{{id}}" wx:for-index="idx" wx:for-item="comment" bindtap="clickComment" data-id="{{ comment.id }}" data-userid="{{ comment.userId }}" data-usernick="{{ comment.user.nickName }}">
+      <view class='avatar'>
+        <image src='{{comment.user.avatarUrl}}'></image>
+      </view>
+      <view class='content'>
+        <view class='nick'>{{comment.user.nickName}}</view>
+        <view class='text'>{{comment.replyUser?'回复'+comment.replyUser.nickName+': '+comment.content:comment.content}}</view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+<view class='reply'>
+  <form bindsubmit='comment' report-submit='true'>
+    <view class='content'>
+      <textarea fixed="true" auto-height value="{{content}}" bindinput='textarea' placeholder="{{placeholder || '点击评论'}}" />
+    </view>
+    <view class='btn'>
+      <button form-type='submit'>发送</button>
+    </view>
+  </form>
+</view>

@@ -10,8 +10,9 @@ Page({
     size: 10,
     page: 0
   },
+
   // 加载页面的时候获取列表数据
-  onLoad: function() {
+  onLoad: function () {
     this.list();
   },
   post: function() {
@@ -41,14 +42,13 @@ Page({
   clickQuestion: function(e) {
     const id = e.currentTarget.dataset.id;
     console.log("点击问题", id);
+    wx.navigateTo({
+      url: 'info?id=' + id,
+    });
   },
   list: function() {
     const page = this.data.page;
     const size = this.data.size;
-    wx.showLoading({
-      title: "加载中",
-      mask: true
-    });
     service({
         ...ListQuestion,
         data: {
@@ -57,7 +57,6 @@ Page({
         }
       })
       .then(resp => {
-        wx.hideLoading();
         var concat = this.data.list.concat(resp.data);
         concat.forEach((item, index) => {
           if (item.title && item.title.length > 16) {
@@ -82,6 +81,10 @@ Page({
       })
       .catch(error => {
         console.log("请求列表失败", error);
+        wx.showToast({
+          title: error.message,
+          icon: "none"
+        });
       });
   }
 });

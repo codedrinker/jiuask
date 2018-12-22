@@ -1,0 +1,112 @@
+.main {
+  padding: 20rpx 30rpx 150rpx 30rpx;
+}
+
+.main .question {
+  width: 100%;
+}
+
+.main .question .title {
+  font-size: 39rpx;
+  font-weight: bold;
+  width: 100%;
+}
+
+.main .question .date {
+  font-size: 30rpx;
+  margin-top: 5rpx;
+  color: gray;
+}
+
+.main .question .content {
+  font-size: 35rpx;
+  margin-top: 10rpx;
+}
+
+.main .question .reactions {
+  width: 100%;
+  margin-top: 10rpx;
+}
+
+.main .question .reactions .reaction-item {
+  color: #8a8a8a;
+  margin: 10rpx;
+  display: inline-block;
+}
+
+.main .question .reactions .reaction-item image {
+  width: 26rpx;
+  height: 26rpx;
+}
+
+.main .question .reactions .reaction-item text {
+  margin-left: 10rpx;
+}
+
+.main .sep {
+  margin: 10rpx 0;
+  width: 100%;
+  border-bottom: 1px solid lightgrey;
+}
+
+.main .comments .comment {
+  padding: 15rpx 0;
+  min-height: 100rpx;
+}
+
+.main .comments .comment .avatar {
+  float: left;
+  width: 60rpx;
+}
+
+.main .comments .comment .avatar image {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.main .comments .comment .content {
+  float: left;
+  padding-left: 30rpx;
+  padding-bottom: 15rpx;
+  width: 84%;
+}
+
+.main .comments .comment .content .nick {
+  width: 100%;
+  color: #0061bd;
+}
+
+.reply {
+  bottom: 0px;
+  width: 100%;
+  position: fixed;
+  border: 1px solid lightgrey;
+  background-color: rgb(241, 240, 240);
+  padding: 10rpx;
+}
+
+.reply .content {
+  position: relative;
+  width: 75%;
+  padding: 20rpx;
+  float: left;
+}
+
+.reply .btn {
+  position: relative;
+  float: left;
+  width: 20%;
+}
+
+.reply textarea {
+  width: 100%;
+  font-size: 33rpx;
+  color: gray;
+}
+
+.reply button {
+  font-size: 33rpx;
+  width: 136rpx;
+  padding: 0;
+  margin: 0;
+}

@@ -2,7 +2,10 @@
 const app = getApp();
 const service = options => {
   wx.showNavigationBarLoading();
-
+  wx.showLoading({
+    title: "加载中",
+    mask: true
+  });
   options = {
     dataType: "json",
     ...options,
@@ -16,7 +19,8 @@ const service = options => {
     const optionsData = {
       success: res => {
         wx.hideNavigationBarLoading();
-        if (res.data.status == 1005){
+        wx.hideLoading();
+        if (res.data.status == 1005) {
           wx.showModal({
             title: '请登陆',
             content: '您还未登录，请授权登陆',
@@ -27,12 +31,23 @@ const service = options => {
               });
             }
           });
+        } else if (res.data.status != 200) {
+          reject(res.data);
+        } else {
+          resolve(res.data);
         }
-        resolve(res.data);
       },
       fail: error => {
         wx.hideNavigationBarLoading();
-        reject(error);
+        wx.hideLoading();
+        if (error.errMsg == 'request:fail timeout') {
+          error = {
+            message: "请求超时，请重试"
+          };
+          reject(error);
+        } else {
+          reject(error);
+        }
       },
       ...options
     };

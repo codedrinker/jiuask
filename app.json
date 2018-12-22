@@ -5,8 +5,13 @@
     "pages/question/list",
     "pages/notification/list",
     "pages/profile/index",
-    "pages/gift/list"
+    "pages/gift/list",
+    "pages/question/info"
   ],
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
   "window": {
     "navigationBarTitleText": "久问",
     "backgroundColor": "#F6F6F6",

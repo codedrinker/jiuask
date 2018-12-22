@@ -1,5 +1,5 @@
 <view>
-  <form bindsubmit='post'>
+  <form bindsubmit='post' report-submit='true'>
     <view class="page-section">
       <view class="weui-cells__title">输入标题</view>
       <view class="weui-cells weui-cells_after-title">
